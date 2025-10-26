@@ -88,88 +88,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   lastObject: {fileID: 0}
   randomPositionOffset: {x: 0, y: 0, z: 0}
---- !u!1 &4084354093990882549
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8004355644481981748}
-  - component: {fileID: 8182175419976527217}
-  m_Layer: 0
-  m_Name: Graphics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8004355644481981748
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084354093990882549}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 503748861112664288}
-  - {fileID: 787127153216728753}
-  - {fileID: 514167833622479343}
-  m_Father: {fileID: 3252929154537766037}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8182175419976527217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084354093990882549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 325923b7a62944e44b63f1054f93b3bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemIndex: 0
-  currentItem: {fileID: 0}
-  items:
-  - {fileID: 4866455535161851566}
-  - {fileID: 7671253090604610972}
-  - {fileID: 4602243303003843165}
-  autoSync: 0
-  indexSynchroniser: {fileID: 0}
-  loopCycle: 0
-  exclusiveMode: 1
-  cascadeMode: 0
-  onNextItem:
-    m_PersistentCalls:
-      m_Calls: []
-  onPrevItem:
-    m_PersistentCalls:
-      m_Calls: []
-  onChangeItem:
-    m_PersistentCalls:
-      m_Calls: []
-  onFirstItem:
-    m_PersistentCalls:
-      m_Calls: []
-  onLastItem:
-    m_PersistentCalls:
-      m_Calls: []
-  onFirstOverflow:
-    m_PersistentCalls:
-      m_Calls: []
-  onLastOverflow:
-    m_PersistentCalls:
-      m_Calls: []
-  onOverflow:
-    m_PersistentCalls:
-      m_Calls: []
+  parent2SpawnPoint: 0
 --- !u!1 &4602243303003843165
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8004355644481981748}
+  m_Father: {fileID: 3252929154537766037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7677818823900347524
 MeshFilter:
@@ -287,7 +206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8004355644481981748}
+  m_Father: {fileID: 3252929154537766037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1828048161068072662
 MeshFilter:
@@ -376,7 +295,9 @@ Transform:
   m_Children:
   - {fileID: 8102108679383696663}
   - {fileID: 817435277787381416}
-  - {fileID: 8004355644481981748}
+  - {fileID: 503748861112664288}
+  - {fileID: 787127153216728753}
+  - {fileID: 514167833622479343}
   - {fileID: 7375651808666535572}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -395,12 +316,26 @@ MonoBehaviour:
   onPrimaryInteract:
     m_PersistentCalls:
       m_Calls: []
+  onSecondaryInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  onPrimaryInteractLift:
+    m_PersistentCalls:
+      m_Calls: []
+  onSecondaryInteractLift:
+    m_PersistentCalls:
+      m_Calls: []
+  customTouchDistance: -1
+  customHoldDistance: -1
+  restrictSecondaryToHeldOnly: 0
+  heldText: 
   onHoverEnter:
     m_PersistentCalls:
       m_Calls: []
   onHoverExit:
     m_PersistentCalls:
       m_Calls: []
+  hoverText: 
   onFirstInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -408,22 +343,23 @@ MonoBehaviour:
   onDrop:
     m_PersistentCalls:
       m_Calls: []
+  attachPoint: {fileID: 0}
   throwForce: 2
   noCollideOnHold: 1
   groundPlace: 0
+  dropOnKeyLift: 0
   groundPlaceOffset: {x: 0, y: 0, z: 0}
-  moving: 0
   freezeRotation: 0
-  trayMode: 0
-  subCollliders: []
   snapSpeed: 20
   startingPosition: {x: 0, y: 0, z: 0}
   startingRotation: {x: 0, y: 0, z: 0, w: 0}
   myRbody: {fileID: 0}
   myCollider: {fileID: 0}
-  myTray: {fileID: 0}
-  trayOffset: {x: 0, y: 0, z: 0}
-  trayInventory: []
+  myMagnetSnapper: {fileID: 0}
+  myRayManipulator: {fileID: 0}
+  originalUseGravity: 1
+  moving: 0
+  subCollliders: []
 --- !u!65 &7659548138851200827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -482,7 +418,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8102108679383696663}
   - component: {fileID: 6901417058426056479}
-  - component: {fileID: 2669203104306593119}
   m_Layer: 7
   m_Name: HeatSource Detector
   m_TagString: Untagged
@@ -594,27 +529,7 @@ MonoBehaviour:
   subject: {fileID: 0}
   triggerActive: 1
   myRenderer: {fileID: 0}
---- !u!65 &2669203104306593119
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7506997994571321327}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.2, y: 1.2, z: 1.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  contactList: []
 --- !u!1 &7671253090604610972
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +561,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8004355644481981748}
+  m_Father: {fileID: 3252929154537766037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8943577380674065460
 MeshFilter:
@@ -752,7 +667,7 @@ MonoBehaviour:
   onClockZero:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8182175419976527217}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemCycler, Assembly-CSharp
         m_MethodName: NextItem
         m_Mode: 1
